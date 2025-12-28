@@ -5,7 +5,7 @@ Este projeto consiste em uma aplicação em Java com interface gráfica desenvol
 
 O sistema permite realizar o cadastro, alteração e exclusão de disciplinas, aplicando conceitos de Programação Orientada a Objetos, como herança, polimorfismo e uso de collections, além de armazenamento permanente em arquivo.
 
-## 🎯 Funcionalidades
+## Funcionalidades
 
 - Cadastro de disciplinas obrigatórias e optativas
 
@@ -23,7 +23,7 @@ O sistema permite realizar o cadastro, alteração e exclusão de disciplinas, a
 
 - Validação para exigir que o código da disciplina tenha exatamente 8 caracteres
 
-## 🧠 Conceitos Utilizados
+## Conceitos Utilizados
 
 - Programação Orientada a Objetos
 
