@@ -7,33 +7,32 @@ O sistema permite realizar o cadastro, alteração e exclusão de disciplinas, a
 
 ## 🎯 Funcionalidades
 
-Cadastro de disciplinas obrigatórias e optativas
+- Cadastro de disciplinas obrigatórias e optativas
 
-Alteração de disciplinas já cadastradas
+- Alteração de disciplinas já cadastradas
 
-Exclusão de disciplinas
+- Exclusão de disciplinas
 
-Listagem das disciplinas cadastradas
+- Listagem das disciplinas cadastradas
 
-Exibição da carga horária calculada a partir dos créditos
+- Exibição da carga horária calculada a partir dos créditos
 
-Controle do limite máximo de 27 créditos por período
+- Controle do limite máximo de 27 créditos por período
 
-Validação para impedir códigos de disciplinas repetidos
+- Validação para impedir códigos de disciplinas repetidos
 
-Validação para exigir que o código da disciplina tenha exatamente 8 caracteres
+- Validação para exigir que o código da disciplina tenha exatamente 8 caracteres
 
 ## 🧠 Conceitos Utilizados
 
-Programação Orientada a Objetos
+- Programação Orientada a Objetos
 
-Herança
+- Herança
 
-Polimorfismo
+- Polimorfismo
 
-Collections (ArrayList)
+- Collections (ArrayList)
 
-Interface gráfica com Swing
+- Interface gráfica com Swing
 
-Manipulação de arquivos para persistência de dados
-# Orientador_de_Disciplinas_Java
+- Manipulação de arquivos para persistência de dados
