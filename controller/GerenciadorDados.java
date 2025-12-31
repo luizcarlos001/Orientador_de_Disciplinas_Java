@@ -25,19 +25,27 @@ public class GerenciadorDados {
         }
     }
 
+    public void atualizar(int index, Disciplina nova) {
+        if (index >= 0 && index < lista.size() && nova != null) {
+            lista.set(index, nova);
+            salvarNoArquivo();
+        }
+    }
+
     public ArrayList<Disciplina> getLista() {
         return lista;
     }
 
     private void salvarNoArquivo() {
-     
         try (PrintWriter writer = new PrintWriter(new FileWriter(CAMINHO_ARQUIVO))) {
             for (Disciplina d : lista) {
-             
-                String linha = d.getCodigo() + ";" + 
-                               d.getNome() + ";" + 
-                               d.getCreditos() + ";" + 
-                               d.getTipo();
+                String linha = d.getCodigo() + ";" +
+                               d.getNome() + ";" +
+                               d.getCreditos() + ";" +
+                               d.getTipo() + ";" +
+                               d.getCargaHoraria() + ";" +
+                               d.getPeriodoRecomendado() + ";" +
+                               d.getPreRequisitos();
                 writer.println(linha);
             }
         } catch (IOException e) {
@@ -60,11 +68,34 @@ public class GerenciadorDados {
                 String nome = partes[1];
                 int cred = Integer.parseInt(partes[2]);
                 String tipo = partes[3];
+                int periodo = 0;
+                String prereq = "-";
+
+                // Formatos possíveis:
+                // 4 colunas: codigo;nome;creditos;tipo
+                // 5 colunas: + cargaHoraria (ignorada, calculada)
+                // 7 colunas: + cargaHoraria;periodoRecomendado;preRequisitos
+                if (partes.length >= 6) {
+                    try {
+                        periodo = Integer.parseInt(partes[5]);
+                    } catch (Exception ex) {
+                        periodo = 0;
+                    }
+                }
+                if (partes.length >= 7) {
+                    prereq = partes[6];
+                }
 
                 if (tipo.equals("OBRIGATORIA")) {
-                    lista.add(new DisciplinaObrigatoria(cod, nome, cred));
+                    Disciplina d = new DisciplinaObrigatoria(cod, nome, cred);
+                    d.setPeriodoRecomendado(periodo);
+                    d.setPreRequisitos(prereq);
+                    lista.add(d);
                 } else {
-                    lista.add(new DisciplinaOptativa(cod, nome, cred));
+                    Disciplina d = new DisciplinaOptativa(cod, nome, cred);
+                    d.setPeriodoRecomendado(periodo);
+                    d.setPreRequisitos(prereq);
+                    lista.add(d);
                 }
             }
         } catch (Exception e) {
