@@ -270,21 +270,39 @@ public class TelaPrincipal extends JFrame {
     }
 
     private void atualizarTabela(List<Disciplina> lista) {
-        tabelaModelo.setRowCount(0);
-        int total = 0;
-        for (Disciplina d : lista) {
-            tabelaModelo.addRow(new Object[] {
-                    d.getCodigo(),
-                    d.getNome(),
-                    d.getCreditos(),
-                    d.getPeriodoRecomendado(),
-                    d.getCategoria(),
-                    d.getCargaHoraria()
-            });
-            total += d.getCreditos();
+    tabelaModelo.setRowCount(0);
+
+    int totalCreditos = 0;
+    int chObrigatoria = 0;
+    int chOptativa = 0;
+
+    for (Disciplina d : lista) {
+        tabelaModelo.addRow(new Object[] {
+                d.getCodigo(),
+                d.getNome(),
+                d.getCreditos(),
+                d.getPeriodoRecomendado(),
+                d.getCategoria(),
+                d.getCargaHoraria()
+        });
+
+        totalCreditos += d.getCreditos();
+
+        if ("OBRIGATORIA".equals(d.getTipo())) {
+            chObrigatoria += d.getCargaHoraria();
+        } else {
+            chOptativa += d.getCargaHoraria();
         }
-        lblResumo.setText("Disciplinas: " + lista.size() + " | Total Créditos: " + total);
     }
+
+    lblResumo.setText(
+        "Disciplinas: " + lista.size()
+        + " | Total Créditos: " + totalCreditos
+        + " | CH Obrigatória Pendente: " + chObrigatoria
+        + " | CH Optativa Pendente: " + chOptativa
+    );
+}
+
 
     private void limpar() {
         txtCodigo.setText("");
