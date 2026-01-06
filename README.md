@@ -41,7 +41,7 @@ src/
 │ ├─ Disciplina.java
 │ ├─ DisciplinaObrigatoria.java
 │ └─ DisciplinaOptativa.java
-│
+|
 ├─ controller/
 │ └─ GerenciadorDisciplinas.java
 │
@@ -50,10 +50,6 @@ src/
 │
 └─ Main.java
 
-yaml
-Copiar código
-
----
 
 ## 🧠 Conceitos de Programação Orientada a Objetos Utilizados
 
