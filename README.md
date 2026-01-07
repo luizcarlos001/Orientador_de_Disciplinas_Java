@@ -4,7 +4,7 @@ Aplicação desenvolvida em Java com interface gráfica (Swing) para auxiliar na
 
 ---
 
-## 🎯 Objetivo do Sistema
+##  Objetivo do Sistema
 
 O sistema tem como objetivo facilitar o controle das disciplinas cursadas ou planejadas, permitindo:
 
@@ -16,7 +16,7 @@ O sistema tem como objetivo facilitar o controle das disciplinas cursadas ou pla
 
 ---
 
-## ⚙️ Funcionalidades Implementadas
+##  Funcionalidades Implementadas
 
 - Cadastro de disciplinas obrigatórias e optativas.
 - Alteração dos dados de uma disciplina selecionada.
@@ -34,7 +34,7 @@ O sistema tem como objetivo facilitar o controle das disciplinas cursadas ou pla
 
 ---
 
-## 🗂️ Estrutura do Projeto
+##  Estrutura do Projeto
 
 src/
 ├─ model/
@@ -51,7 +51,7 @@ src/
 └─ Main.java
 
 
-## 🧠 Conceitos de Programação Orientada a Objetos Utilizados
+##  Conceitos de Programação Orientada a Objetos Utilizados
 
 ### Classes, Objetos e Encapsulamento
 A classe abstrata `Disciplina` representa o conceito geral de uma disciplina, contendo atributos como código, nome, créditos e semestre recomendado.  
@@ -98,7 +98,7 @@ A interação é feita de forma simples e direta, conforme os conteúdos trabalh
 
 ---
 
-## ▶️ Como Compilar e Executar
+##  Como Compilar e Executar
 
 1. Certifique-se de ter o **JDK 8 ou superior** instalado.
 2. Organize o projeto conforme a estrutura apresentada.
